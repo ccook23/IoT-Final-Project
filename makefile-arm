@@ -10,9 +10,9 @@ LIBS=-lcurl -uClibc -lc
 
 SRC=arm-hw.c
 OBJ=$(SRC:.c=.o)
-MAIN= arm-hw
+MAIN=arm-hw
 
-RM= rm -f
+RM=rm -f
 
 .c.o:
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
