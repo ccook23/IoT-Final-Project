@@ -1,0 +1,28 @@
+#!/bin/sh
+
+case "$1" in
+    start)
+        echo "Starting thermocouple simulator"
+        echo "OFF" > /tmp/status
+        echo "64.0" > /tmp/temp
+        /usr/sbin/tcsimd
+        ;;
+
+    stop)
+        echo "Stopping thermocouple simulator"
+        killall tcsimd 2>/dev/null
+        ;;
+
+    restart)
+        $0 stop
+        sleep 1
+        $0 start
+        ;;
+
+    *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+        ;;
+esac
+
+exit 0

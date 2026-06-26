@@ -1,3 +1,7 @@
-*.o
-requestor
-*.swp
+*.pem
+credentials.txt
+*.db
+venv/
+__pycache__/
+project.tgz
+rootfs.ext2
